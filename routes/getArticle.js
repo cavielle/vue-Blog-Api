@@ -9,9 +9,7 @@ router.get('/getArticle', async (ctx, next) => {
     try {
         let data = await infoModel.getArticle(id)
         ctx.body = {
-            state: 200,
-            msg: '成功',
-            data: data
+            data
         }
     } catch (error) {
         ctx.body = {

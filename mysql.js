@@ -55,7 +55,10 @@ const updateShow = (id, show) => {
     let _sql = `UPDATE Article SET ArticleShow = '${show}' where ArticleID = '${id}';`
     return query(_sql)
 }
-
+const cryptPwd = (uname,pwd) => {
+    let _sql = `select * from userinfo  where name = '${uname}' && password = '${pwd}';`
+    return query(_sql)
+}
 module.exports = {
     blogtest,
     getArticleInfo, //获取所有文章详情
@@ -63,4 +66,5 @@ module.exports = {
     postArticle, //发送文章
     updateShow, //更改文章显示
     updateArticle,//更新文章 
+    cryptPwd,
 }

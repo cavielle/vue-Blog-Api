@@ -10,7 +10,6 @@ router.prefix('/api')
 router.get('/cryptPwd', async (ctx, next) => {
     let username = ctx.query.uname
     let password = ctx.query.pwd
-    // console.log(username, password)
     let file = ''
     await encrypt(password)
         .then(data => {

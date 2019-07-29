@@ -39,6 +39,11 @@ const getArticleInfo = (val) => {
     let _sql = `select * from Article where ArticleShow = 1 ORDER BY ArticlePostTime DESC`
     return query(_sql)
 }
+const getArticleAdmin = (val) => {
+    // let _sql = `select * from Article where ArticleID = ${val}`
+    let _sql = `select * from Article ORDER BY ArticlePostTime DESC`
+    return query(_sql)
+}
 const getArticle = (id) => {
     let _sql = `select * from Article where ArticleID = '${id}' && ArticleShow = 1`
     return query(_sql)
@@ -62,6 +67,7 @@ const cryptPwd = (uname,pwd) => {
 module.exports = {
     blogtest,
     getArticleInfo, //获取所有文章详情
+    getArticleAdmin,//后台获取所有文章详情
     getArticle,//根据id获取文章详情
     postArticle, //发送文章
     updateShow, //更改文章显示

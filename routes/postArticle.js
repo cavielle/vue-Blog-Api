@@ -5,6 +5,7 @@ let infoModel = require('../mysql.js');
 router.prefix('/api')
 
 router.post('/postArticle', async (ctx, next) => {
+    console.log('111111111111111')
     let id = ctx.query.id
     let ImgUrl = ctx.query.imgurl
     let show = ctx.query.show

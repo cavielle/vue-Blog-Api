@@ -10,6 +10,7 @@ const JwtUtil = require('./token.js');
 const index = require('./routes/index')
 const users = require('./routes/users')
 const getArticleInfo = require('./routes/getArticleInfo')
+const getArticleAdmin = require('./routes/getArticleAdmin')
 const getArticle = require('./routes/getArticle')
 const postArticle = require('./routes/postArticle')
 const updateShow = require('./routes/updateShow')
@@ -80,6 +81,7 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(getArticleInfo.routes(), getArticleInfo.allowedMethods())//获取所有文章详情
+app.use(getArticleAdmin.routes(), getArticleAdmin.allowedMethods())//后台获取所有文章详情
 app.use(getArticle.routes(), getArticle.allowedMethods())//根据id获取文章详情
 app.use(postArticle.routes(), postArticle.allowedMethods())//发送文章
 app.use(updateShow.routes(), updateShow.allowedMethods())//更改文章显示
